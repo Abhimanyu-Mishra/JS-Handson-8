@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Handson-8</title>
+    <style>
+
+        body{
+            background: radial-gradient( rgb(197, 126, 204),black,rgb(126, 126, 9));
+        }
+        b{
+            color: rgb(248, 15, 34);
+            background-color: yellow;
+        }
+        p{
+            color: black;
+            font-weight: bold;
+            border: 2px solid red;
+            border-radius: 10px;
+            padding: 10px 30px;
+            background-color: yellow;
+            margin: 10px 30px;
+        }
+        pre{
+            background-color: white;
+            color: black;
+            padding: 10px;
+        }
+        h1{
+            font-weight: bold;
+            color: yellow;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS-Handson-8(Array of Object)</h1>
+<p><b> Question-1: We are interested in retrieving only the name of the students and all the names should be in caps.</b>
+<pre><b>"let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] "
+</b></pre>
+
+
+
+<pre>
+    let stdarr = studentRecords.map((a) => a.name.toUpperCase())
+</pre>
+<br>
+<p><b>"Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+    [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]"</b></p>
+    <Pre> let stdarr = studentRecords.filter((a) => a.marks>50)
+        console.log(stdarr);</Pre>
+        <br>
+        <p><b>Question 3: Retrieve the details of students who scored more than 50 marks and have id greater than 120.</b></p>
+        <pre>let stdid = studentRecords.filter((a) =>a.id>120);
+            let stdgre = stdid.filter((a) =>a.marks>50) </pre>
+
+        <p><b>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</b></p>
+        <pre> let summarks = studentRecords.reduce((a,b)=> a+=b.marks ,0)
+            console.log(summarks);</pre>
+
+            <p><b>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</b></p>
+            <pre>let maxmarks = studentRecords.filter((a) => a.marks>50)
+                let stdname = maxmarks.map((a) => a.name)</pre>
+
+                <p><b> Question 6: This time we are required to print the sum of marks of the students with id > 120.</b></p>
+                <pre>let maxid = studentRecords.filter((a) => a.id>120);
+                    let stdsum = maxid.reduce((a,b) => a+=b.marks, 0);
+                   </pre>
+
+        <p><b>Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</b></p>
+        <pre>let maxmarks = studentRecords.filter((a) => a.marks>50)
+            let summ = maxmarks.reduce((a,b) => a += b.marks, 0)
+            
+            let below = studentRecords.filter((a)=>a.marks<50)
+            let add = below.map((a)=>a.marks+15);
+            let great = add.filter((a) => a>50)
+            let summgr = great.reduce((a,b) =>a += b ,0)
+            
+            total = summgr + summ</pre>
+
+            <p><b>Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. </b></p>
+            <pre></pre>
+<script src="./main.js"></script>
+</body>
+</html>
