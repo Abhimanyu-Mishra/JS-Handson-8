@@ -47,11 +47,23 @@ let studentRecords = [ {name: 'John', id: 123, marks : 98 },
 // let summgr = great.reduce((a,b) =>a += b ,0)
 
 // total = summgr + summ
+stuarr =[]
+function Student(name,classnm,rollno){
+ this.stdname = name,
+ this.stdclass = classnm,
+ this.stdrollno = rollno
+}
+let std1 = new Student("Abhi",'Ea17', 01)
+let std2 = new Student("sanjay",'Ea17', 02)
+let std3 = new Student("Anurag",'Ea17', 03)
+let std4 = new Student("Kamal",'Ea17', 04)
+let std5 = new Student("Arun",'Ea17', 05)
+let std6 = new Student("Ravi",'Ea17', 06)
+stuarr.push(std1)
+stuarr.push(std2)
+stuarr.push(std3)
+stuarr.push(std4)
+stuarr.push(std5)
+stuarr.push(std6)
 
-
-arr=[]
-const arrayObj = new Array()
-new Array() = 'Name' ,'class','rollno'
-
-
- console.log(arr);
+console.log(stuarr);
